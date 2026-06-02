@@ -242,6 +242,21 @@ class handler(BaseHTTPRequestHandler):
             raw_response = call_groq(system_prompt, user_content, groq_api_key)
             parsed_data = extract_json(raw_response)
 
+            # Ensure endpoints that expect a list actually return a list
+            if endpoint in ['assumptions', 'uncertainty', 'context', 'prompts']:
+                if isinstance(parsed_data, dict):
+                    # If LLM wrapped it in a key, find the list
+                    for val in parsed_data.values():
+                        if isinstance(val, list):
+                            parsed_data = val
+                            break
+                    else:
+                        # If it's just a single object, wrap it in a list
+                        parsed_data = [parsed_data]
+                elif not isinstance(parsed_data, list):
+                    # Fallback for unexpected types
+                    parsed_data = []
+
             self.send_response(200)
             self.send_header('Content-Type', 'application/json')
             self.send_header('Access-Control-Allow-Origin', '*')

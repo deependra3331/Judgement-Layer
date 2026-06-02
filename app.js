@@ -178,7 +178,7 @@ async function fetchAssumptions(payload) {
     if (!res.ok || data.error) throw new Error(data.error || 'Server error');
 
     analysisState.assumptions = data;
-    const items = data.slice(0, 2);
+    const items = Array.isArray(data) ? data.slice(0, 2) : [];
     totalInsights += items.length;
     updateInsightBadge();
 
@@ -204,7 +204,7 @@ async function fetchUncertainty(payload) {
     if (!res.ok || data.error) throw new Error(data.error || 'Server error');
 
     analysisState.uncertainty = data;
-    const item = data[0];
+    const item = Array.isArray(data) ? data[0] : (typeof data === 'object' ? data : null);
     if (item) {
       totalInsights += 1;
       updateInsightBadge();
@@ -237,7 +237,7 @@ async function fetchPrompts(payload) {
     const data = await res.json();
     if (!res.ok || data.error) throw new Error(data.error || 'Server error');
 
-    const items = data.slice(0, 3);
+    const items = Array.isArray(data) ? data.slice(0, 3) : [];
     totalInsights += items.length;
     updateInsightBadge();
 
