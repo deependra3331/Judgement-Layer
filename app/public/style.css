@@ -57,6 +57,7 @@
 
 body {
   font-family: var(--font-body);
+  font-size: 1.05rem;
   background-color: #ffffff;
   color: var(--slate-800);
   min-height: 100vh;
@@ -171,7 +172,7 @@ body {
 
 .hero-section h1 {
   font-family: var(--font-title);
-  font-size: 3rem;
+  font-size: 3.25rem;
   font-weight: 800;
   letter-spacing: -1px;
   line-height: 1.15;
@@ -180,7 +181,7 @@ body {
 }
 
 .hero-section .subtitle {
-  font-size: 1.125rem;
+  font-size: 1.25rem;
   color: var(--slate-600);
   max-width: 580px;
   margin: 0 auto;
@@ -204,19 +205,19 @@ body {
 .form-group label {
   font-family: var(--font-title);
   font-weight: 600;
-  font-size: 0.95rem;
+  font-size: 1.05rem;
   color: var(--slate-900);
 }
 
 .form-group label .optional {
   font-weight: 400;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   color: var(--slate-600);
 }
 
 .form-group textarea {
   font-family: var(--font-body);
-  font-size: 1rem;
+  font-size: 1.1rem;
   padding: 1rem 1.25rem;
   border-radius: var(--radius-md);
   border: 1.5px solid var(--slate-200);
@@ -247,7 +248,7 @@ body {
 
 .custom-select-wrapper select {
   font-family: var(--font-body);
-  font-size: 0.95rem;
+  font-size: 1.05rem;
   width: 100%;
   padding: 0.875rem 1.25rem;
   border-radius: var(--radius-md);
@@ -268,7 +269,7 @@ body {
 .custom-select-wrapper::after {
   content: '↓';
   font-family: sans-serif;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   color: var(--slate-600);
   position: absolute;
   right: 1.25rem;
@@ -287,7 +288,7 @@ body {
   color: #ffffff;
   font-family: var(--font-title);
   font-weight: 600;
-  font-size: 1.05rem;
+  font-size: 1.15rem;
   padding: 1rem 2rem;
   border: none;
   border-radius: var(--radius-md);
@@ -320,7 +321,7 @@ body {
   color: var(--slate-800);
   font-family: var(--font-title);
   font-weight: 600;
-  font-size: 1.05rem;
+  font-size: 1.15rem;
   padding: 1rem 2rem;
   border: 1.5px solid var(--slate-200);
   border-radius: var(--radius-md);
@@ -379,7 +380,7 @@ body {
 
 .analysis-status h2 {
   font-family: var(--font-title);
-  font-size: 2.25rem;
+  font-size: 2.5rem;
   font-weight: 800;
   letter-spacing: -0.5px;
   color: var(--slate-900);
@@ -998,108 +999,3 @@ body {
 .close-btn:hover {
   color: var(--slate-900);
 }
-
-.modal-body {
-  padding: 1.5rem;
-}
-
-.modal-desc {
-  font-size: 0.85rem;
-  color: var(--slate-600);
-  margin-bottom: 1.25rem;
-}
-
-.modal-body input {
-  font-family: var(--font-body);
-  font-size: 0.95rem;
-  width: 100%;
-  padding: 0.75rem 1rem;
-  border: 1.5px solid var(--slate-200);
-  border-radius: var(--radius-md);
-  outline: none;
-  transition: all var(--transition-fast);
-}
-
-.modal-body input:focus {
-  border-color: var(--teal-500);
-  box-shadow: 0 0 0 3px var(--teal-50);
-}
-
-.modal-footer {
-  padding: 1rem 1.5rem;
-  background-color: var(--slate-50);
-  border-top: 1px solid var(--slate-100);
-  display: flex;
-  justify-content: flex-end;
-  gap: 0.75rem;
-}
-
-/* Toast styling */
-.toast-notification {
-  position: fixed;
-  bottom: 2rem;
-  left: 50%;
-  transform: translateX(-50%) translateY(100px);
-  background-color: var(--slate-900);
-  color: #ffffff;
-  padding: 0.75rem 1.5rem;
-  border-radius: var(--radius-full);
-  font-size: 0.85rem;
-  font-weight: 500;
-  box-shadow: var(--shadow-lg);
-  z-index: 2000;
-  opacity: 0;
-  transition: all var(--transition-normal);
-}
-
-.toast-notification.show {
-  transform: translateX(-50%) translateY(0);
-  opacity: 1;
-}
-
-/* --- Mobile Responsive Layout --- */
-@media (max-width: 768px) {
-  .hero-section h1 {
-    font-size: 2.25rem;
-  }
-  .page-view {
-    padding: 1.5rem 1rem;
-  }
-  .evaluation-form {
-    padding: 1.5rem;
-  }
-  .analysis-status {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.5rem;
-  }
-  .grid-panels {
-    grid-template-columns: 1fr;
-  }
-  .action-buttons-row {
-    flex-direction: column;
-  }
-  .comparison-grid {
-    grid-template-columns: 1fr;
-  }
-  .comparison-column {
-    height: 350px;
-  }
-}
-
-/* Error States */
-.panel-card.panel-error {
-  border-color: HSL(0, 84%, 80%);
-  background-color: HSL(0, 100%, 99%);
-}
-
-.error-text {
-  color: HSL(0, 72%, 40%);
-  font-size: 0.85rem;
-  line-height: 1.5;
-  padding: 1rem;
-  background-color: HSL(0, 86%, 97%);
-  border: 1px dashed HSL(0, 86%, 93%);
-  border-radius: var(--radius-md);
-}
-
